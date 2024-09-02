@@ -36,7 +36,7 @@ export default function EnrolledCourses() {
   
   const userDetail = async ()=>{
     try{
-      const res = await apiConnector("GET","http://localhost:4000/api/profile/getUserProfile",null,{Authorization:`Bearer ${token}`});
+      const res = await apiConnector("GET","https://studycenter-backend.onrender.com/api/profile/getUserProfile",null,{Authorization:`Bearer ${token}`});
       if(!res.data.success){
         throw new Error(res.data.message);
       }
