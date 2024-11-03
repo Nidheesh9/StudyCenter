@@ -23,7 +23,7 @@ function Catalog() {
   },[]);
 
   if (catalogPageData==null) {
-    return <Error />
+    return <div className=".spinner"></div>
   }
 
   return (
