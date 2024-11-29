@@ -15,7 +15,7 @@ exports.resetPasswordToken = async (req,res)=>{
         }
         const token = crypto.randomUUID();
         const user = await User.findOneAndUpdate({email:email},{token:token,resetTime:Date.now()+(5*60*1000)},{new:true});
-        const url = `http://localhost:3000/reset-password/${token}`;
+        const url = `https://studycenter-frontend.onrender.com/reset-password/${token}`;
         await mail(email,"Password Reset",`Password Reset Link :- ${url}`);
         return res.status(200).json({
             success:true,
